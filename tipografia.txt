@@ -1,0 +1,133 @@
+
+ÍNDICE:
+
+1. TIPOS DE TEXTO
+2. VARIAVEIS TIPOGRAFICAS
+3. ESCALAS TIPOGRAFICAS
+4. PAREANDO TITULOS
+5. ALINHAMENTO
+6. ELEMENTOS HIERÁRQUICOS
+7. ELEMENTOS
+8. TRACKING E KERNING
+9. SEPARADORES E ORNAMENTOS (para web)
+10. REFERENCIAS
+
+_______________________________________________________________________________________________
+
+1. TIPOS DE TEXTO
+
+- sem serifa
+- com serifa
+- com serifa grossa
+- script
+- display
+
+
+2. VARIAVEIS TIPOGRAFICAS
+
+- tamanho do tipo
+ex. 14px, 16px ou 18 px (usados em corpo de texto)
+
+- altura da linha
+Ex. 1,5 x tamanho do texto
+1,5 x 14px = 21px
+
+- largura do texto
+maximo de 10/14 palavras por linhas
+
+obs.: indicações tipográficas para corpo de texto como Helvetica e Arial (sem serifa)
+
+
+
+3. ESCALAS TIPOGRAFICAS
+
+- utilize no maximo 6 tamanhos
+utilizar mais de 6 tamanhos diferentes de texto pode criar um ruido visual
+
+
+- escolha uma escla hamonica
+a que eu mais utilizo é 11, 14, 18, 24, 36 e 48px.
+
+- contraste é rei
+nunca utilize tamanhos proximos, como 14px e 15px.
+Utilizar tamanhos diferentes serve exatamente para diferenciar uma informação da outra.
+
+
+
+
+4. PAREANDO TIPOS
+
+- Contraste é rei
+Nunca sue tipografias parecidas como Helvetica e Arial para criar uma composição
+
+- Use no máximo 2
+Quebre a regra apenas quando você dominar ela
+
+- Escolha tipos complementares
+Tipografias serifadas para título e sem serifas para corpo podem ser uma boa combinação.
+
+>>>>>>>>>>>>>>>>>>>>
+
+5. ALINHAMENTO
+
+- À esquerda 
+Esse é o padrão web, você vai usar 80% das vezes.
+
+- Centralizado
+Bom para títulos, subtítulos ou pequenos blocos de texto.
+O layout deve acompanhar este alinhamento.
+
+- Justificado
+Pouco utilizado na web, pois ainda não existem meios fáceis que permitam a hifenização do texto. Quase sempre gera caminhos de rato na web.
+
+
+6. ELEMENTOS HIERÁRQUICOS
+
+- Negrito
+Utulizado para destacar palavras importantes
+
+- Itálico
+Utilizado para estilizar citações, títulos de livros/filmes e outros elementos
+
+- Sublinhado
+Geralmente utilizado para destacar palavras que possuam link para outra página.
+
+
+
+7. ELEMENTOS
+
+- CAIXA ALTA
+Utilizado principalmente em títulos/subtítulos.
+Nunca utilize em corpo de textto.
+
+OBS.: Nunca utilize mais de um elemento para destacar uma palavra. Uma palavra em negrito no meio de um texto regular, já é destacada o suficiente. Não é necessário utilizar negrito, itálico e sublinhado juntos.
+
+
+
+8. TRACKING E KERNING
+
+- Tracking é a distância entre todas as letras. (Tracking padrão da tipográfia é ZERO)
+- Kerning é a distância entre duas letras
+
+9. SEPARADORES E ORNAMENTOS (para web)
+
+
+-Utilizados em paragrafos 
+Para marcar o ínicio deles
+
+- Utilizados em títulos
+Para separar título e conteúdo
+
+- Utilizado em listas
+Para marcar os itens
+
+- Entre seções
+Para marcar o ínicio ou fim
+
+10. REFERENCIAS
+
+typewolf.com
+nicewebtype.com
+wikipedia.com
+elementos do estilo tipográfico (Robert Bringhurst)
+

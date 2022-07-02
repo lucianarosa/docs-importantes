@@ -1,0 +1,280 @@
+ÍNDICE
+
+1. DIRERENÇA ENTRE RESPONSIVIDADE/ADAPTATIBILIDADE
+2. TIPOS DE TELAS
+3. IMAGENS
+4. CSS @MEDIA
+5. CSS FUNÇÃO - VAR
+6. HACK CSS
+7. FUNCÃO MAX E MIN
+8. FUNCÃO CALC
+_______________________________________________________________________________________________
+1. DIRERENÇA ENTRE RESPONSIVIDADE/ADAPTATIBILIDADE
+
+O SITE RESPONSIVO AUMENTA E DIMINUI DE TAMANHO PROPORCIONALMENTE.
+
+O SITE ADAPTATIVO SE ADAPTA CONFORME AS TELAS ABAIXO, ENTÃO ELE SE MANTEM ENTRE UMA ESTRUTURA E OUTRA E QUANDO CHEGA NUM DETERMINADO TAMANHO, ELE FARÁ NOVAMENTE UM AJUSTE
+
+2. TIPOS DE TELAS
+320 - celular comum
+480 - celular grande
+760 - tablet
+960 - monitor antigo 1024
+1200 - monitor HD - 1280, mas tira um pouco para barra de rolagem
+1600 - monitor grande full HD 4K
+
+
+RESPONSIVO/ADAPTATIVO
+320, 760, 960, 1600 
+
+
+<meta name="viewport" content="width=device-width, user-scalable=no">
+
+width=device-width ==> largura da pagina = a largura do dispositivo
+user-scalable=no ==> nao poderá dar zoom 
+
+
+3. IMAGENS
+
+3.1 TAGS específicas para manipular a responsividade de imagens em uma página são:
+picture, source, img;
+
+  <picture>
+    <source media="(min-width: 650px)" srcset="img2-abobora.png"/>
+    <source media="(min-width: 450px)" srcset="img3-verde.png"/>
+    <img src="img1-amarela.png"/> ==> se as duas nao estiverem sendo acionadas, entao mostrará essa
+  </picture>
+
+
+3.2 OBJECT-FIT
+é uma propriedade CSS para tratar uma imagem.
+
+Imagem retangular de 10(largura)x7(altura)
+
+- object-fit: fill ==>  não mudará nada, pois é a caracteristica q vem no html
+- object-fit: contain (+usada) ou scale-down (quase nao usada) ==> redimensionará a imagem proporcionalmente a fim de que caiba no bloco, então sobrará nas bordas superior e inferior.
+- object-fit: cover ==> redimensiona a imagem e a cortará dentro do bloco. +++ utilizado
+- object-fit: none ==> simplesmente corta e não redimensiona 
+
+img{
+ width: 400px;
+ eight: 400px;
+ object-fit: cover;
+}
+
+4. CSS @MEDIA
+condicionais para formatação das telas 
+
+
+4.1 MIN-WIDTH E MAX-WIDTH
+
+body{
+ background-color: black;
+}
+
+@media (min-width: 1000px) {
+ body{
+  background-color: red;
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+ body{
+  background-color: green;
+}
+
+@media (min-width: 300px) and (max-width: 700px) {
+ body{
+  background-color: yellow;
+}
+
+4.2 only PRINT
+
+h1{
+ font-size: 40px;
+}
+
+@media only print {
+ h1{
+  font-size: 70px;
+}
+
+
+4.2 only SCREEN
+
+h1{
+ font-size: 40px;
+}
+
+@media only screen{
+ h1{
+  font-size: 70px;
+}
+
+
+4.3 ALL
+Aplicará o estilo para todas as condições
+
+4.4 ORIENTATION
+Dependerá da orientação da tela se estiver em pé (portraid) ou deitado (landscape).
+
+body{
+  display: flex;
+}
+  div{
+  width: 100px;
+  height: 100px;
+  border: 3px solid black
+}
+@media (orientation: landscape){
+  body{
+    flex-direction: row;
+  }
+}
+@media (orientation: portrait){
+  body{
+    flex-direction: column;
+  }
+}
+
+4.5 ASPECT-RADIO
+Pouco usado, mas existe!
+Quando a tela ficar com a proporção igual de 1/1. Quadrado perfeito.
+
+@media (aspect-radio: 1/1) {
+ body{
+  background-color: red;
+}
+
+Pode-se tbm utilizar:
+A largura pode ser o dobro do tamanho da altura.
+
+@media (min-aspect-radio: 2/1) { 
+ body{
+  background-color: red;
+}
+
+Pode-se tbm utilizar:
+A altura pode ser o dobro do tamanho da largura.
+
+@media (max-aspect-radio: 1/2) { 
+ body{
+  background-color: red;
+}
+
+5. CSS FUNÇÃO - VAR
+Função importantíssima para configurações de estilização no css.
+Em vez de ficar jogando as características dentro de cada elemento, cria as variáveis no ROOT e aplica elas dentro dos elementos, assim fica muito mais fácil para fazer a gestão do site/código.
+
+:root{
+  --bg-main: black;
+  --bg-second: darkblue;
+  --font-color:white;
+}
+body{
+  background-color: var(--bg-main);
+}
+h1{
+  color: var(--font-color);
+}
+.container{
+  background-color: var(--bg-second);
+  color: var(--font-color)
+}
+
+5.1 SE NAO TIVER A VARIAVEL
+
+h1{
+  color: var(--font-color, #555); ou color: var(--bg-main, --bg-master);
+}
+
+
+5.2 VAR COM @MEDIA
+
+:root{
+  --bg-main: black;
+  --bg-second: darkblue;
+  --font-color:white;
+  --font-size-main: 25px;
+}
+body{
+  background-color: var(--bg-main);
+  font-size: var(--font-size-main);
+}
+h1{
+  color: var(--font-color);
+}
+.container{
+  background-color: var(--bg-second);
+  color: var(--font-color)
+}
+@media (max-width: 450px){ ==> se estiver com esta estrutura de tela, então alterará o ROOT
+  :root{
+    --font-size-main: 15px;
+  }
+}
+
+
+6. HACK CSS
+
+TELAS:
+
+HD (720p): 1280 x 720 pixels;
+nHD: 640 x 360 pixels;
+qHD: 960 x 540 pixels;
+full HD (FHD ou 1080p): 1920 x 1080 pixels;
+QHD (WQHD): 2560 x 1440 pixels.
+
+
+
+CALCULO:
+PROPORÇÃO = largura/altura
+
+ <div class="video">
+    <div class="area-video">
+      <iframe width="560" heigth="315" src="https://www.youtube.com/watch?v=Xvx2juknFBQ" allowfullscreen></iframe>
+    </div>
+  </div>
+
+
+.video{
+  width: 100%;
+  max-width: 800px;
+  margin: auto; ==> ficar no meio da página
+
+}
+.video-area{
+  position: relative;
+  height: 0px;
+  background-color: #ccc;
+  padding: 0px 0px 56.25%; ==> (1080/1920)*100 = 56.25% ==> tamanho da tela HD
+}
+.video-area iframe{
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border:0px;
+}
+
+7. FUNCÃO MAX E MIN
+Essa função forçará que imagem fique em um determinado tamanho caso o usuário diminua ou aumente demais a área da tela. Então, ficará responsiva.
+
+
+img{
+  width: max(50%, 300px); ou  min(50%, 300px)
+}
+
+
+8. FUNCÃO CALC
+Essa função faz com que a sua propriedade faça um calculo para estabelecer um valor minimo determinado.
+
+body{
+  margin: 0;
+}
+.container{
+  width: calc(100% - 20px); ==> se não deixar espaço entre os valores não funciona
+  height: 200px;
+  background-color: #ccc;
+}

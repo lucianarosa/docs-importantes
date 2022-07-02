@@ -1,0 +1,415 @@
+
+INDICE
+
+1. LINKS
+2. TAG
+3. LISTAS
+4. DIV
+5. ATRIBUTOS
+6. LINK
+7. IMAGEM
+8. TABLE
+9. FORMS
+10. VALIDAÇÃO
+11. SEMANTICA AVANÇADA
+
+
+_________________________________________________________________________
+
+1. Links importantes para entender mais sobre o HTML:
+
+    https://www.w3schools.com/html/html_intro.asp
+    https://developer.mozilla.org/en-US/docs/Web/HTML
+    https://downloadcursos.top
+
+
+2. TAGS DE ESTRUTURA
+
+header
+nav
+section
+article
+aside
+footer
+
+
+2.1 PRINCIPAIS TAGS
+
+<head> Cabeçalho da página
+<title> Titulo da página
+<body> Onde escrever o corpo
+<h1> até <h6> Títulos 
+<p> Paragrafo
+<strong> (semântica de importância) <b> = Deixar em negrito alguma palavra em específico
+<i> <em> (semantica de importancia) = Itálico
+<s> Abc
+<small> o texto fica um pouco menor do que o padrão 
+<del> o texto selecionado fica riscado
+<mark> marca o texto tipo marcatexto
+<sup> vai suspender o texto. Fica bom para caso como o 1º que a bolinha fica suspensa
+<sub> vai abaixar o texto.
+<hr> Linha horizontal
+<br> Quebra de linha *só adiciona no final <br>
+<header> <nav> Parte superior da página
+<section> Separar em seções
+<a> anchor
+<img> imagem
+<button> cria um butao clicavel
+<!-- --> = comentarios
+<video> criará uma área para videos, mas ilustrarei melhor em outra parte abaixo.
+<audio> criará uma área para audio
+
+
+3. LISTAS
+
+<ol> ORDENADA
+<ul> NÃO ORDENADA
+<li> linha da lista
+
+
+4. DIV
+
+Serve para isolar em blocos. Assim, ficará disponível para formatação da página
+
+<p>Galáxia <span style="background-color: chartreuse;">Andrômeda</span></p>
+
+
+5. ATRIBUTOS
+Na abertura da TAG, pode-se usar os seguintes atributos:
+
+- href="" 
+- src=""
+- target="_blank" ==> abrirá a página numa nova guia sem sair da que estava
+- width=""
+- eight=""
+- alt="" alternativa em texto para alguma imagem. Auxilia pessoas com deficiencias visuais na leitura da imagem.
+- title="" abrirá um box com o titulo inserido no link a ser clicado
+- data-variavel="" digita a palavra data-qqNomeVariavel = "atribui um valor", ficará dentro do codigo
+
+
+6. LINK
+
+<a href="saturno.html">Saturno</a> == ancorará um link e redirecionará a uma determinada página ao ser clicada
+
+<link rel="stylesheet" href="style.css"/> ==> referenciará o arquivo css dentro do arquivo html
+
+7. IMAGEM
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Saturn_during_Equinox.jpg/300px-Saturn_during_Equinox.jpg" alt="">
+
+<div><a target="_blank" href="https://pt.wikipedia.org/wiki/Saturno_(planeta)">Para mais informações, clique aqui.</a></div>
+
+8. TABELAS / TABLE
+
+<table> – Criar a tabela
+<caption> – Título da tabela
+
+<thead> – Separar cabeçalho
+  <tr> – Linha
+    <th> – Célula em negrito, geralmente usada para cabeçalho
+
+<tbody> – Separar conteúdo da tabela
+  <tr> – Linha
+    <td> – Célula sem negrito
+
+9. FORMS
+
+9.1 ATRIBUTOS NO FORMS
+action="outro-arquivo.html" 
+method="get" (mostra no link)
+method="post" (interno-ideal para senhas)
+
+9.2 ATRIBUTOS NO INPUTS
+
+- placeholder = "O que mostrará no campo ao ser digitado" - note q sumirá ao usuário inserir informações
+::placeholder {}
+
+- autofocus ==> o ponteiro do mouse ficará ativo no input apontado
+
+input:focus { cor
+color: red;
+}
+
+input:focus { ==> ou se for so da borda pode ser assim
+outline 0;
+border: 2px solid #f67300;
+}
+
+- value = "Informação que ficará visível e fixo no elemento"
+
+- size ="10" quantidade de caracteres
+
+- maxlength/minlength="4" max/min exigido
+
+- required ==> obrigatório
+
+- autocomplete = "off/on" ==> já autocompletará ao digitar
+
+
+
+- name = ""
+
+- id = ""
+
+9.3 INPUT
+abre e fecha nela msm
+<input type="text" name="usuario"/>
+<input type="email" name="email" value"@gmail.com"/> value já vem pré-preenchido
+<input type="password"/>
+<input type="checkbox"/> caixinha com campo para marcar
+<input type="radio" name="sexo"> bolinha para marcar entre uma opçao e outra, no caso, pode-se escolher entre o sexo feminino e o masculino
+<input type="submit" value="Enviar"/> botao de enviar
+<input type="color"/> abre uma paleta de cores
+<input type="date"/> 
+<input type="time"/> 
+<input type="datetime-local"/> com horas
+<input type="month"/> 
+<input type="number"/> 
+<input type="range" min="1" max="100" step="10"/> de tanto a tanto ==> o step pulará de 10 em 10
+<input type="search"/> variacao do text arredondando os cantos
+<input type="tel"/> 
+<input type="url"/>
+<input type="week"/>  
+<input type="hidden"/> informação não interessa ou não convém ao usuário
+<input type="file"/> destinado para envio de arquivos
+
+9.4 SELECT
+<select name="order" size="2" multiple> ==> size para quantas opções devera ser selecionado
+  <option value="bestseller">Mais vendidos</option> ==> o value aparecerá no campo da url
+  <option value="last" selected >Recentes</option> ==> selected quer dizer essa opção ficará sempre em 1º
+  <option value="cheapest">Preços mais baixos</option>
+</select>
+
+9.5 TEXTAREA
+<form action="index.html" method="get">
+  <textarea name="comments">Comentários:</textarea>
+
+9.6 BUTTON
+<button>Texto do próprio botão</button> dentro do formulário tem a msm função do submit
+
+9.7 LABEL
+for= quando a pessoa clicar na label redirecionará para o input referenciado em questão
+
+<label for="nome">Nome Completo:</label>
+<input type="text" name="nome" id="nome"
+
+
+  <label>  ==> outra maneira de redirecionar a label no input
+      Nome Completo: <br>
+      <input type="text" name="nome" >
+  </label>
+
+    
+<input type="checkbox" id="teste">
+<label for="teste">Eu declaro que li e aceito os termos de uso.</label>
+
+ <label>  
+     <input type="checkbox"/>
+     Eu declaro que li e aceito os termos de uso.
+ </label>
+
+
+9.8 FIELDSET
+Cria um bloco com borda em redor de um bloco de formulário. Criando a sensação de que aquele conjunto de campos pertencem ao mesmo grupo. Então, vc coloca os campos: Nome e Sobrenome dentro (label e input) dentro de um fieldset.
+
+9.9 LEGEND
+Vc usa em conjunto com o FIELDSET para evidenciar uma legenda ao conjunto de campos.
+
+ 
+9.10 EXEMPLOS PRÁTICOS:
+
+9.10.1 PROCURAR NUM OUTRO SITE
+
+  <form action="https://www.google.com/search" method="get">
+    <label for="q">O que deseja pesquisar?</label>
+    <input type="text" id="q" name="q" placeholder="Digite aqui">
+    <input type="submit" value="Pesquisar"> //BOTÃO
+  </form>
+
+
+  <form action="">
+    <div>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+    </div>
+
+    <br>
+    <div>
+ 
+9.10.2 EMAIL + SENHA
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email"required> -
+      <label for="pwd">Password:</label>
+      <input type="password" name="pwd" id="pwd"required> 
+    </div>
+
+    <div>
+
+9.10.3 DATA 
+      <label for="dataNascimento">Data de Nascimento:</label>
+      <input type="date" name="dataNascimento" id="dataNascimento"required> -
+      
+9.10.4 ANEXAR DOCUMENTO
+      <label for="photo">Foto:</label>
+      <input type="file" name="photo" id="photo"required>
+    </div>
+
+9.10.5 SELECIONAR NUMA LISTA
+    <div>
+      <label for="nationality">Nacionalidade:</label>
+      <select name="nationality" id="nationality">
+        <option value="russian">Russa</option>
+        <option value="american">Americana</option>
+        <option value="brazilian">Brasileira</option>
+      </select> -
+
+9.10.6 SELECIONAR MARCANDO BOLINHA
+      Gênero:
+      <label for="female">F</label>
+      <input type="radio" name="gender" id="female" value="female">
+      <label for="male">M</label>
+      <input type="radio" name="gender" id="male" value="male">
+    </div>
+
+9.10.7 SELECIONAR VÁRIOS ITEM TICANDO
+    <div>
+      Suas principais qualidades: <br>
+      <label for="inteligencia">Inteligência</label>
+      <input type="checkbox" name="inteligencia" id="inteligencia"> |
+      <label for="resiliencia">Resiliência</label>
+      <input type="checkbox" name="resiliencia" id="resiliencia"> |
+      <label for="prepFisico">Preparo Físico</label>
+      <input type="checkbox" name="prepFisico" id="prepFisico"> |
+      <label for="educacao">Educação</label>
+      <input type="checkbox" name="educacao" id="educacao"> |
+    </div>
+
+9.10.8 CAIXA DE TEXTO COM DETERMINADO TAMANHO
+    <div>
+      <textarea name="description" id="description" cols="30" rows="10"placeholder="Porque você gostaria de ser astronauta?"></textarea>
+    </div>
+
+9.10.9 BOTÃO DE ENVIAR (SUBMIT)
+    <div>
+      <input type="submit" value="Criar">
+    </div>
+  </form>
+  
+
+10. VALIDAÇÃO NATIVA
+Evita que um input seja preenchida com dados de categorias diferentes ou que fiquem em branco.
+Por exemplo, evita que um campo de idade em que o usuário deveria preencher com informações numéricas seja preenchido com letras.
+Essa validação pode ser feita diretamente pelo JS, mas também pode ser feita pelo HTML. Isso se chama de validação nativa.
+
+10.1 REQUIRED
+Exige que o usuário digite alguma informação no campo.
+  <input type="text" id="q" name="q" placeholder="Digite aqui" required>
+
+10.1.1 REQUIRED MINLENGTH/MAXLENGTH="20" 
+Mínimo de valores exigidos para preenchimento.
+
+10.2 EMAIL
+Exige que o usuário informe a informação contendo o símbolo @.
+<input type="email" name="email" placeholder="Digite aqui">
+
+10.2 EMAIL PATTERN
+<input type="email" pattern="(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)" title="endereço de e-mail/>
+
+10.3 NUMBER
+Exige que o Usuário digite números e que sejam entre determinados valores específicos.  
+<input type="number" id="q" name="q" placeholder="Digite aqui"min="10" max="12">
+
+10.3.1 NUMBER STEP
+Se adicionar um step="2", os números serão aumentados de 2 em 2 pela setinha.
+
+10.4 DATE
+Exige que o Usuário digite DATAS e que sejam entre determinadas datas específicas.  
+<input type="date" name="birthdate" min="2021-06-30">
+
+10.5 CAMPOS DE TEXTO E SENHA
+  <form action="htpps://www.example.com">
+    <input type="text" name="firstname"><br>
+    <input type="password" name="psw"><br>
+    <input type="submit" value="Enviar">
+  </form>
+
+10.6 HIDDEN
+
+Quando não convem ou não interessa para o usuário. Não aparecerá no body. 
+Serve principalmente para ID ou tokens do usuário se comunicar com o banco de dados.
+<input type="hidden" name="country" value"BR">
+
+10.7 FILE ACCEPT
+<input type="file" name="photo" accept="image/*"/> 
+<input type="file" name="document" accept="application/pdf"/> 
+<form method="post" action="blablabla.php" enctype="multipart/form-data"> sempre que tiver algum arquivo a ser enviado deve-se incluir na tag form o enctype para converter o file em bytes.
+
+
+11. SEMANTICA AVANÇADA
+
+<header> h1, p, 
+resumo da sua página, pois o motor de busca da google checará essa tag para selecionar o seu site
+
+<nav> a,
+menus principais do site
+muito importante para cegos e surdos
+não precisa que todos os links estejam dentro do nav, mas os de menu sim
+
+<footer>
+rodapé
+quem criou,
+data de fundação 
+links de politica e privacidade e termos de uso
+
+<section>
+setorizar a sua pagina
+
+<article>
+tudo será interpretado como conteúdo principal do site 
+notícia, blog do site
+
+<aside>
+conteudo secundario do site
+menos intensidade
+
+<time>
+para evidenciar datas especiais
+colocar o atributo datetime"yyyy-mm-dd"
+<time datetime"yyyy-mm-dd"> dia do meu aniversario</time>
+não tem efeito visual, mas tem efeito de scan para indexar nos motores de busca dos principais sites de busca.
+efeitos para S.O
+
+<personalizar tags>
+vc msm pode criar os seus nomes de tags
+a maioria dos browsers/navegadores exceto no internet explorer 8
+
+<video>
+criará uma área específica para videos
+<video widht="320" height="240" controls ou autoplay>
+  <source src="video.mp4" type="video/mp4"/> 
+  <source src="video.ogg" type="video/ogg"/> se nao suportar mp4, entao o site lerá esse formato
+</video>
+
+<audio>
+criará uma área específica para audio
+<audio + atributos>
+  <source src="som.mp3" type="audio/mpeg"/> 
+  <source src="video.ogg" type="video/ogg"/> se nao suportar mp4, entao o site lerá esse formato
+</audio>
+ATRIBUTOS:
+-controls: barra de controle
+-autoplay: começará a rodar assim q entrar na pagina
+-loop: loop infinito, assim q termina começa de novo
+-muted: ao iniciar ficará mutado
+-preload: baixará primeiro antes de rodar para nao ficar pausando
+
+
+11.
+
+
+
+
+
+
+
+

@@ -1,0 +1,619 @@
+INDICES
+
+1. VINCULANDO O CSS NO HTML
+2. FORMATANDO TEXTOS
+3. FORMATANDO TABELAS
+4. FORMATANDO FORMULÁRIOS
+5. ESTRUTURA
+6. BACKGROUND IMAGE VIA URL
+7. BORDER
+8. ESPECIFICIDADE
+9. UNIDADE DE MEDIDAS
+10. SELETORES MAIS AVANÇADOS
+11. PSEUDOS CLASSES
+12. INSPETOR DO CHROME
+13. HERANÇA
+14. FONT AND TEXT
+15. SELECIONANDO FONTS DO GOOGLE
+16. BOX MODEL
+17. COLORS
+18. ATRIBUTOS ESPECIAIS PARA LINKS/BTN
+19. LISTAS 
+20. TRANSFORMANDO BLOCO EM IN-LINE
+21. TRANSFORMANDO IN-LINE EM BLOCO
+22. OCULTANDO TAGS
+23. ELEMENTOS FIXOS -- usados em barra de navegação
+24. NORMALIZE.CSS
+
+___________________________________________________________________________________________
+
+1. VINCULANDO O CSS NO HTML:
+
+1.1 INLINE
+dentro do arquivo/linha a ser formatada (não é boa prática)
+<h1 style="color: green">Jupiter<\h1>
+
+
+1.2 TAGS
+dentro do proprio arquivo numa tag (se for para uma pag só OK)
+<head>
+<style>
+   li{
+     color: green;
+   }
+</head>
+
+
+1.3 ARQUIVO SEPARADO
+arquivo.css
+com as formatações necessárias (boa prática)
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+2. FORMATANDO TEXTOS
+
+- text-decoration: 
+none - sem linha
+overline - linha acima
+line-through - linha no meio
+underline - abaixo
+
+- text-transform:
+uppercase
+lowercase
+
+- letter-spacing:
+espaçamento entre letras
+
+- word-spacing:
+espaçamento entre palavras 
+
+- line-height:
+altura da linha
+
+- text-align:
+formatando textos a direita, esquerda, centro, justificado
+
+-text-shadow:
+4 itens: 1px 1px 3px #0000FF
+direita/px 
+abaixo/px 
+esfumaçamento/px 
+color
+
+-font-weight: bold;
+
+3. FORMATANDO TABELAS
+
+table{
+  width: 600px;
+}
+table thead{
+  background-color:gold;
+}
+th, td{ (a vírgula inclui tanto uma tag quanto a outra)
+ padding: 10px;
+ text-align: center; (alinha o texto da tabela ao centro)
+}
+tbody tr:hover{ (quando o usuário passar o mouse por cima a tag especifica mudará de cor)
+ background-color: #ccc;
+}
+tbody td{
+  border-bottom: 1px solid #ccc;
+}
+tbody tr:nth-child(even){ (deixará somente as linhas pares em uma cor diferente)
+  background-color: #eee;
+}
+
+
+4. FORMATANDO FORMULÁRIOS
+
+display: 
+inline (vem por padrão)
+block (vira uma div)
+
+
+outline: 0px 
+é possível tirar toda a formatação que vem do html
+
+input[type=text], textarea, select{
+dá para selecionar varias tags e tbm tags especificas dentro de uma msm formatacao 
+  
+
+
+
+
+5. ESTRUTURA
+
+SELETOR = H1
+
+DECLARATION:
+{COLOR (PROPERTY)
+BLUE (VALUE)}
+
+
+
+6. BACKGROUND IMAGE VIA URL
+
+body{
+  background-image: url('https://upload.wikimedia.org/wikipedia....jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+7. BORDER
+
+h1 {
+  color: yellow;
+  background-color: brown ;
+  border-color: yellow; ===> cor
+  border-width: 8px; ===> espessura da borda
+  border-style: solid; ==> tipo
+
+ou
+  border: 8px dashed orange; ==> linha unica
+}
+
+
+7.1 RADIUS / h1 (fica todo preenchido com o cantos arredondados)
+background-color: #; 
+border-radius: 5px;
+
+7.2 RADIUS / div (vira uma bola)
+background-color: #;
+width: 200px;
+eight: 200px;
+border-radius: 100px;
+
+7.3 RADIUS / div (só 2 cantos arredondados)
+background-color: #;
+width: 200px;
+eight: 200px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+
+7.4 RADIUS / div (só 3 cantos arredondados e 1 diferente)
+background-color: #;
+width: 200px;
+eight: 200px;
+border-radius: 10px;
+border-top-right-radius: 100px;
+
+7.5 RADIUS / input (campo arredondando)
+margin-left: 100px;
+margin-top: 100px;
+border-radius: 5px;
+border: 1px solid #000;
+
+
+8. ESPECIFICIDADE 
+
+8.1 CLASSES/CLASS
+Usado para várias alterações específicas
+
+8.1.1 Definir classes dentro do arquivo html para especificar as formatações a serem aplicadas.
+<li class="greenText">Texto a ser formatado<\li>
+
+8.1.1 Para acessar essas classes, basta seguir as instruções abaixo:
+.greenText{
+  color: green
+}
+
+
+8.2 ID
+É usado quando tem itens singulares a serem formatados.
+
+8.2.1 Definir classes dentro do arquivo html para especificar as formatações a serem aplicadas.
+<li id="greenText">Texto a ser formatado<\li>
+
+8.2.2  Para acessar essas classes, basta seguir as instruções abaixo:
+#greenText{
+  color: green
+}
+
+9. UNIDADE DE MEDIDAS
+
+9.1 ABSOLUTAS
+
+-px: pixel
+-pt: point (geralmente usado para quem imprime as páginas)
+-in: polegadas
+-cm: centimetros
+-mm: milimetros
+
+9.2 RELATIVAS - EM/REM - FONT-SIZE
+
+9.2.1 EM 
+-é relativo ao font-size do ID Pai. Então 1em equivalerá à quantidade de pixel informada font-size do ID pai.
+Todos as demais formatações como width/height entre outros considerará como referência o font-size em pizel do pai em ordem de cascata para converter os filhos aninhadamente.
+-cascata: quer dizer que se tivermos vários elementos aninhados, a formatação css em "EM" lerá o valor referente ao elemento anterior multiplicando proporcionalmente.
+ 
+
+ <div id="pai-em">
+   <div class="em">Testando1-EM
+     <div class="em">Testando2-EM
+      <div class="em">Testando3-EM
+       <div class="em">Testando4-EM
+
+ <style>
+    #pai-em{
+      font-size: 10px;
+      }
+
+    .em{
+      background-color: aqua;
+      width:7em ;
+      font-size:2em; 2 em* 10px = 20px ==> e assim proporcionalmente aos demais elementos aninhados
+      text-align: center;
+      }
+
+9.2.2 REM
+-É relativo ao font-size do ID Pai
+Todos as demais formatações como width/height entre outros considerará como referência o font-size em pizel do pai para converter.
+-Em alguns navegadores antigos como Internet Explorar 8 não era suportado, porém hoje é muito usado.
+Então, como se tem essa peculiaridade, é sugerido que coloque uma font-size em px antes da rem para sanar possíveis falhas de navegadores.
+-Basea-se na unidade :root (Pai) para determinar todos os filhos 
+-Deixa o site 100% responsivo
+-Quase como um zoom
+
+ <div id="pai-rem">
+    <div class="rem">Testando1-REM
+      <div class="rem">Testando2-REM
+        <div class="rem">Testando3-REM
+          <div class="rem">Testando4-REM
+
+  <style>
+    #pai-rem{
+      font-size: 10px;
+      }
+
+    .rem{
+      font-size:20px;
+      font-size: 2rem ; ==> 2rem * 10px = 20px ==> todos filhos terão os msm 20px
+      background-color:greenyellow;
+      width:15rem;
+      }
+
+9.2.3 PORCENTAGEM
+-Usa-se muito para estruturas e não muito para fontes, porém é possível usar em fontes também.
+
+  <div id="pai">
+    <div class="filho">Testando1
+
+  <style>
+    #pai{
+      font-size: 20px;
+      background-color: black;
+      color: white;
+      width: 50%;
+
+      }
+
+    .filho{
+      background-color: #999;
+      width: 50%;
+      }
+
+9.2.4 EX
+- Quase não se usa. 
+- É baseada no tipo de fonte que se está usando. Então a estrutura analisará o tamanho da letra X e fará a multiplicação em pixel do EX.
+- Exemplo: 3ex ==> Analizará a altura da letra X da fonte escolhida e multiplicará 3 vezes esse tamanho.
+
+9.2.5 CH
+- Esta configuração é usada para fontes monospace que tem a mesma largura, tipo courier (character unique).
+
+  <body>
+    <div class="container">
+      <p class="nome">Luciana da Rosa Lima</p>
+
+  <style>
+    body{
+      font-family: Courier, monospace;
+      }
+    
+    .container{
+      background-color:  #999;
+      width: 300px;
+    }
+
+    .nome{
+      background-color:black;
+      color: white;
+      width: 20ch; ==> Luciana da Rosa Lima tem 20 caracteres entre letras e espaçamento
+      }
+
+9.2.6 VH e VW
+- Viewport Height (altura): refere-se ao espaço de visualização da tela em percentual
+- Viewport Width (largura): refere-se ao espaço de visualização da tela em percentual
+- Usado em estruturas gerais: MENU - BARRA DE TAREFAS
+- Viewport = janela de exibização (tela vizível)
+
+      height: 80vh;
+      width: 80vw;
+
+9.2.7 VMIN e VMAX
+- pouco usado, pois não tem muito compatibilidade com alguns navegadores.
+- um pouco parecido com vh/vw ... não entendi direito
+
+10. SELETORES MAIS AVANÇADOS
+
+
+10.1 ALL
+* {
+}
+Selecionará todos os elementos do arquivo
+
+
+
+10.2 DESCENDÊNCIA
+
+li a{
+}
+Selecionará todos os a "anchors" do arquivo. No caso em questão, todos que estão dentro de listas.
+Seletor de descendência 
+
+
+10.3 FILHO
+li >a{
+}
+Todo a que for um filho de li
+
+
+10.4 ADJACENTE
+h1 + h4{
+}
+Seleciona todo item adjacente
+
+
+10.5 ATRIBUTO
+a[href='/recibo']{
+}
+Selecionará todos os anchor que contenha recibo.
+
+
+11. PSEUDOS CLASSES
+
+li: nth-of-types(2){
+}
+Selecionará apenas o segundo da lista, mas o indicado é fazer através de classes.
+li: nth-of-types(odd){ ==> todo número ímpar da listagem
+}
+
+
+12. INSPETOR DO CHROME
+Se vc marcar algum item no browse e clicar com o botao direito em inspecionar, vc será direcionado à linha de código do item selecionado em questão, então poderá alterar se assim o desejar.
+
+
+
+13. HERANÇA / INHERIT
+
+div{
+ border: 2px solid;
+}
+
+div ul{
+ border: inherit;
+}
+
+
+14. FONT AND TEXT
+
+p{
+  font-family: 'Arial', 'Helvetica', 'sans-serif'; ==> SE O NAVEGADOR DO USUÁRIO NÃO TIVER ALGUMA FONTE, ENTÃO O CSS OFERTARÁ OUTRA FONTE CONFORME ORDENAMENTO DA LISTA.
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+h1{
+  text-align: center;
+  text-decoration: underline;
+}
+
+
+15. SELECIONANDO FONTS DO GOOGLE
+
+1. selecionar a font no google font
+2. copiar o link
+3. colar o link no head do index.html
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto&display=swap" rel="stylesheet">
+4. selecionar a fonte no style.css da seguinte maneira:
+
+	font-family: 'Geostar Fill', cursive;
+
+
+
+
+16. BOX MODEL
+
+Ordem - Sentido horário
+
+TOP - acima
+BOTTOM - abaixo
+
+RIGHT - direita
+LEFT - esquerda
+
+16.1 CONTENT:
+o conteudo da caixa, onde aparecem textos ou imagens
+
+16.2 PADDING: 
+espaçamento ao redor de um conteúdo (seu preenchimento é transparente)
+
+16.3 BORDER:
+uma borda que fica entre a margin e o padding
+
+16.4 MARGIN: 
+limpa uma área fora da border (a margem é transparente)
+
+h1{
+  margin: 45px auto 45px auto; CIMA/DIREITA/BAIXO/ESQUERDA - se eu colocar direita e esquerda como auto, a tela ficará centralizada no espaço disponível. 
+  margin: auto ==> Esta formatação deixará que seu elemento fique centralizado na página
+
+  width: 50%; LARGURA DO ITEM SELECIONADO NO ESPAÇO DISPONIVEL NA TELA. SE EU COLOCAR EM %, O SITE FICARÁ RESPONSÍVEL
+
+  border: 2px solid;
+  padding: 10px; ==> ESPAÇO ENTRE A BORDA E O OBJETO/TEXTO
+}
+
+
+h1{
+  margin: 45px auto 45px auto; CIMA/DIREITA/BAIXO/ESQUERDA ==> sentido relogio
+
+MARGIN ZERO NO BODY - O body vem com 8px de margim por padrão, o ideal é zerá-lo toda vez que iniciar um projeto.
+
+16.5 INCLUINDO PADDING/BORDER NO TAMANHO DO ELEMENTO
+
+Incluirá em todos os elementos do body, incluindo o tamanho do padding e do border no largura/altura(width/eight) do seu elemento.
+
+
+16.6 FORMATAÇÃO INICIAL IDEAL
+
+*{
+ box-sizing: border-box;  (content-box: vem por padrão)
+}
+
+body{
+  margin: 0px; (o html vem por padrao uma margim de 8px)
+}
+
+
+
+17. COLORS
+
+> NOME DA COR: Verificar lista de cores no html no google
+
+> HEXADECIMAL: #000000;
+#xxxxxx ==> são 6 algarismos com 3 sequencias de XX
+#xxx ==> pode-se usar somente 3 algarismos
+1º seq vermelho, 2º seq verde e 3º seq azul
+0-9
+A-F
+0 nada
+F tudo
+
+
+> RGB (0,0,255) red, gree e blue
+vai de 0 a 255
+
+> RGBA (0,0,255,0.6) ==> a última ref é do grau de opacidade/transparência
+
+> HSL (100%,0,0)
+
+> CURRENTCOLOR
+Herdará a cor do pai
+
+body{
+  color: #FFF
+h1{
+  border: 2px solid currentColor
+
+
+18. ATRIBUTOS ESPECIAIS PARA LINKS/BTN
+
+18.1 HOVER
+Quando o usuario clicar no link, ele muda de cor. Emtão, seria interessante usar o recurso de transição para haver um delay para transionar a cor do botão, conforme exemplo abaixo:
+
+.btn{
+  background-color: greenyellow;
+  border: 3px solid #234966;  
+  border-radius: 5px; 
+  color: white;
+  text-decoration: none; (tira o underline do texto)
+  display: block;
+  width: 120px; 
+  padding: 12px 7px;
+  text-align: center;
+  margin: 20px;
+  transition: 0.5s;
+}
+
+.btn:hover{
+  background-color: #234966;
+}
+
+18.2 VISITED
+Quando o link já foi visitado anteriormente pelo usuário.
+
+.link:visited{
+  background-color: #234966;
+}
+
+
+19. LISTAS 
+
+- list-style: none; sem bullets
+
+19.1 LISTAS NÃO-ORDENADAS
+
+- list-style-type:
+disc - padrão
+square -cquadrado
+circle - bola vazada
+nome - sem bullets
+
+19.2 LISTAS ORDENADAS
+
+- type: 
+1, A, a, I, i
+
+- start: 45
+vai começar a partir do 45
+
+
+20. TRANSFORMANDO BLOCO EM IN-LINE
+
+<div class="inline"></div>
+<div class="inline"></div>
+
+.inline{
+  width: 50px;  
+  height: 50px;
+  background-color: teal;
+  margin: 5px;
+  display: inline-block;
+}
+
+
+21. TRANSFORMANDO IN-LINE EM BLOCO
+
+<span class="bloco">Teste 1</span>
+<span class="bloco">Teste 2 </span>
+
+.bloco{
+  display: block;
+}
+
+
+22. OCULTANDO TAGS
+
+<div class="inline-hidden">Teste 3 </div>
+
+.inline-hidden{
+  display: none;
+}
+
+23. ELEMENTOS FIXOS -- usados em barra de navegação
+
+<div class="elemento-fixo">Este elemento ficará fixo na tela</div>
+
+.elemento-fixo{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 15px;  
+  text-align: center;
+  background-color: #1292ae;
+  border-bottom: 2px solid #342299;
+  color:#fff;
+
+24. NORMALIZE.CSS
+Feita para ajustar vários probleminhas.
+
+Uma das formas é colocar isso na tag head:
+<link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+
+Você também pode fazer como você falou usando:
+<link rel="stylesheet" href="normalize.css">

@@ -1,0 +1,60 @@
+
+ÍNDICE:
+
+1. PRIMEIROS PASSOS
+
+ 1.1 RECURSOS NATIVOS DO BROWSER
+ 1.2 DECLARANDO VARIÁVEIS
+
+
+____________________________________________________________________________________
+
+
+1.1 RECURSOS NATIVOS DO BROWSER
+
+..CONSOLE
+console.log("mais comum msg para console")
+console.info("msg mais estilizada")
+console.warn("msg de urgencia")
+console.error("msg na tonalidade de vermelho")
+
+..ALERT
+alert("Sai uma msg na tela")
+
+..CONFIRM
+confirm("Coloque uma pergunta de sim ou não. Entendeu?")
+aparecerá um botão de Cancel ou OK
+
+..PROMPT
+prompt("Qual é o seu nome?")
+aparecerá uma caixa para entrada de dados
+
+
+1.2 DECLARANDO VARIÁVEIS
+
+..
+let nome = "luciana"
+toda vez que tiver que uma variável precise ser declarada pela PRIMEIRA VEZ, deve-se usar a palavra "let" no início
+
+..
+const nome = "luciana"
+Não permite que a variável seja alterada
+
+..
+var ==> parece-se com a let
+
+
+..
+let cadastro = confirm("Deseja efetuar o cadastro?")
+console.log(cadastro)
+retornara uma variável boleana que será atribuída dentro da variável cadastro.
+
+..
+let nome = prompt("Qual é o seu nome?")
+console.log(nome)
+retornara uma variável que será atribuída dentro da variável cadastro.
+
+
+
+
+
