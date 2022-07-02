@@ -1,0 +1,45 @@
+PRINCIPAIS COMANDOS DO GIT
+
+Para clonar arquivo para a sua máquina:
+=======================================
+git init
+git clone +endereço
+
+Para configurar o seu terminal
+==============================
+git config --global user.name “lucianarosa”
+git config --global user.email lucianarosalima@gmail.com
+
+Enviar um arquivo para o GitHub
+===============================
+
+Abrir o terminal no Git Bash
+Criar um repositório no GitHub
+
+
+git init 
+(Criar um repositório do git do seu projeto na sua pasta do desktop)
+
+git add +nome arquivo.extensão 
+(colocar o arq em stage)
+
+git status 
+(checar quais arquivos estão em stage)
+
+git add * 
+(enviar todos arquivos para stage)
+
+git reset 
+(limpar o stage sem enviar)
+
+git commit -m “descrição do seu commit” 
+(preparar todos os arquivos em stage para subir)
+
+git remote and origin +endereço do diretório do GitHub 
+(antes do git push)
+
+git push -u origin master 
+(autenticar o seu acesso)
+
+git push -u origin main 
+(se: error: src refspec master does not match any)
